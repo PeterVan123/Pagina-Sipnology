@@ -1,0 +1,183 @@
+:root {
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuentaParrafos: 'Arial', sans-serif;
+
+    --primario: #3E2EFF;
+    --gris: #e1e1e1;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; /*1 rem = 10px*/
+}
+
+*,*:before, *:after{    /*Hereda del elemento padre (html). Si se usa en otro selector va a heredar de ese selector*/
+
+box-sizing: inherit;
+}
+
+ body{  /*Css para la fuente, tamaño e interlineado*/
+    font-family: var(--fuentaParrafos);
+    font-size: 1.6rem;
+    line-height: 2;
+ }
+
+ /**Globales**/
+
+ .contenedor {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto; /*Centrar el contenido horizontalmente ne la pantalla, centrarse por si mismo*/
+ }
+
+
+*{
+    text-decoration: none;  /*Le quita el interlineado a los enlaces*/
+}
+
+h1,h2,h3,h4 {   
+    font-family: var(--fuenteHeading);  /*Fuente para los textos headers, aplica para todos los H´s*/
+}
+
+h1{     
+    font-size: 4.8rem;  /*Tamaño de fuente*/
+    
+}
+
+h2{
+    font-size: 4rem;    /*Tamaño de fuente*/
+}
+
+h3{
+    font-size: 3.2rem;  /*Tamaño de fuente*/
+}
+
+h4{
+    font-size: 2.8rem;  /*Tamaño de fuente*/
+}
+
+img{
+    max-width: 100%;    /*Tamaño máximo de la imagen de fondo*/
+}
+
+/**Utilidades**/
+
+.no-margin{
+    margin: 0;  /*Quita los margenes definidos por el navegador*/
+}
+
+.no-padding{
+    padding: 0; /*Quita el padding definidos por el navegador*/
+}
+
+.centrar-texto{
+    text-align: center; /*Centra el texto*/
+}
+
+/**Header**/
+.header{    /*Posiciona una imagen el el header*/
+    background-image: url(../img/quienessomosfondo.jpg);
+    height: 40rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; /*Centra la imagen si se cambia de tamaño la ventana del navegador*/
+}
+
+.header__texto{
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 5rem;
+}
+
+@media(min-width: 768px){
+    .header__texto{
+        margin-top: 15rem;
+    }
+}
+
+@media(min-width: 768px){
+    .barra{
+        display: flex;  /*Coloca un elemento frento al otro(Logo texto-enlaces de menu)*/
+        justify-content: space-between; /*Alinear horizontalmente*/
+        align-items: center;    /*Centrado verticalmente*/
+    }
+}
+
+.logo{
+    color: var(--blanco);
+   
+}
+#logo__img{
+    width: 40%;
+    position: relative;
+    display: block; 
+    ;
+}
+
+.logo__nombre{
+    font-weight: 400;
+    
+}
+.logo__bold{
+    font-weight: 700;
+}
+
+@media(min-width: 768px){
+    .navegacion{
+        display: flex;  /*Pone los elementos uno frente al otro*/
+        gap: 2rem;
+    }
+}
+
+.navegacion__enlace{
+    display: block; /*Los elementos no esten juntos, esten uno debajo del otro*/
+    text-align: center; /*Centrado horizontalmente*/
+    font-size: 1.8rem;  /*Tamaño de la letra*/
+    color: var(--negro);
+    line-height: 90px;
+}
+.logo__icono{
+    width: 20%;
+    display: -webkit-inline-box; 
+    text-align: center;
+}
+@media(min-width: 768px){
+    .contenido-principal{
+        display: grid;  /*Poder posicionar los elementos*/
+        grid-template-columns:2fr 1fr ;    /*Definir nuestro diseño, toma en cuenta 2terceras partes y 1tercera parte*/
+        column-gap: 4rem;
+    }
+}
+
+.entrada{
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.entrada:last-of-type{
+    border: none;
+    margin-bottom: 0;
+}
+
+.boton{
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+@media(min-width: 768px) {
+    .boton{
+        display: inline-block;
+    }
+}
+
+.boton--primario{
+    background-color: var(--negro);
+}
